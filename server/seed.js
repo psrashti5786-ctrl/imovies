@@ -30,6 +30,7 @@ const theatres = [
 ];
 
 async function seed() {
+  await Movie.syncIndexes();
   await Promise.all([User, Movie, Theatre, Show, Booking, Payment, Notification].map((m) => m.deleteMany({})));
 
   await User.create({ name: 'Admin', email: 'admin@imovies.com', password: 'admin123', role: 'admin' });
