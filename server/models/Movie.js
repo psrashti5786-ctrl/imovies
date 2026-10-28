@@ -15,7 +15,7 @@ const movieSchema = new mongoose.Schema(
 );
 
 // indexes for movie search
-movieSchema.index({ title: 'text', description: 'text' });
+movieSchema.index({ title: 1 });
 movieSchema.index({ genre: 1 });
 movieSchema.index({ language: 1 });
 
